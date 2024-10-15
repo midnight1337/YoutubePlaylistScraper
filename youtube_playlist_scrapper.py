@@ -29,9 +29,11 @@ class YoutubePlaylistScrapper:
 
             # 0 views playlist raises an ValueError in Pytube lib
             try:
-                playlist_views = playlist.views
+                views = playlist.views
             except ValueError:
-                playlist_views = 0
+                views = 0
+            finally:
+                playlist_views: str = self._convert_views_count_into_nice_looking_format(views=views)
 
             self._playlist_data[playlist_id] = {
                 "title": playlist.title,
@@ -81,7 +83,7 @@ class YoutubePlaylistScrapper:
                         continue
                     else:
                         video_duration: str = self.convert_video_duration_in_seconds_into_minutes(total_seconds=video_length)
-                        video_views: str = self.convert_video_views_count_into_nice_looking_format(views=video_views)
+                        video_views: str = self._convert_views_count_into_nice_looking_format(views=video_views)
 
                         self._playlist_data[playlist_id]['videos'][video_id] = {
                             "title": video_title,
@@ -107,5 +109,5 @@ class YoutubePlaylistScrapper:
         return duration
 
     @classmethod
-    def convert_video_views_count_into_nice_looking_format(cls, views: int) -> str:
+    def _convert_views_count_into_nice_looking_format(cls, views: int) -> str:
         return f"{views:,}".replace(",", " ")

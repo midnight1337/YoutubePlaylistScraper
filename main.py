@@ -4,14 +4,14 @@ from file_manager import FileManager
 
 
 if __name__ == '__main__':
-    playlist_url = input(
+    playlist_url: str = input(
             "Please provide an YT public playlist URL: "
         )
 
+    playlist_url: list[str] = playlist_url.split(sep=',')
+
     scrapper: YoutubePlaylistScrapper = YoutubePlaylistScrapper(
-        playlist_url=[
-            playlist_url
-        ]
+        playlist_url=playlist_url
     )
     scrapper.scrap_playlist()
 

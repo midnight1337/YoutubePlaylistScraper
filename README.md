@@ -8,7 +8,11 @@ This small project is based mostly on a pytube library.
 
 ### How to run it:
 ```
-> git pull https://github.com/midnight1337/YoutubePlaylistScraper.git
+> git clone https://github.com/midnight1337/YoutubePlaylistScraper.git
+
+> python -m venv .venv
+
+> source .venv/bin/activate
 
 > pip install -r requirements.txt
 

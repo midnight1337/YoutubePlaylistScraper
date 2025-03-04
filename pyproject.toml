@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "colorama==0.4.6",
+    "pytest>=8.3.5",
     "pytube==15.0.0",
     "rich==13.9.2",
 ]

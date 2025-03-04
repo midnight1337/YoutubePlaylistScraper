@@ -1,17 +1,16 @@
 YoutubePlaylistScraper
 ===
 
-This simple project allows you to quickly scrap the data of any public playlist on youtube.
+This simple tool allows you to quickly scrap the metadata of any playlist on youtube.
 
-Data included:
-* Playlist info: title, owner, total views, count of videos
-* Video info: title, time duration, total views, url
+* _Playlist_: title, owner, total views, count of videos
+* _Video:_ title, time duration, total views, url
 
-Playlist data is saved into .JSON file, so it allows you to work with that.
+Fetched data is saved into .JSON file.
 
 ---
 
-In order to scrap playlist data, simply provide an playlist url.
+In order to start scraping a playlist, simply provide an playlist url that has public access.
 
 You can also provide few URLs at once, just separate them by using comma.
 
@@ -21,13 +20,9 @@ You can also provide few URLs at once, just separate them by using comma.
 ```
 > git clone https://github.com/midnight1337/YoutubePlaylistScraper.git
 
-> python -m venv .venv
+> uv sync
 
-> source .venv/bin/activate
-
-> pip install -r requirements.txt
-
-> python main.py
+> uv run main.py
 ```
 
 ---

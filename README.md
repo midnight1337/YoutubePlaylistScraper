@@ -1,15 +1,21 @@
-# YoutubePlaylistScraper
+YoutubePlaylistScraper
+===
 
-This simple project allows you to quickly scrap the data of any youtube playlist including:
-* Playlist info like: playlist title, owner, views count and count of videos
-* Video info like: video title, time duration, total views, video url
+This simple project allows you to quickly scrap the data of any public playlist on youtube.
+
+Data included:
+* Playlist info: title, owner, total views, count of videos
+* Video info: title, time duration, total views, url
 
 Playlist data is saved into .JSON file, so it allows you to work with that.
 
-In order to scrap playlist data, simply copy and paste playlist url.
+---
+
+In order to scrap playlist data, simply provide an playlist url.
+
 You can also provide few URLs at once, just separate them by using comma.
 
-**_pytube_** library is a base core of this project.
+---
 
 ### How to run it:
 ```
@@ -24,14 +30,19 @@ You can also provide few URLs at once, just separate them by using comma.
 > python main.py
 ```
 
-### Example usage with scraped playlist data:
+---
 
-Single playlist example:
+### Example usage with given output:
+
+- Single playlist example:
 
 ```
 > python main.py
 
 Please provide an YT public playlist URL: https://www.youtube.com/playlist?list=PL0PoKNuzUC_sWCvwmI5TXoflXJdzJeiAl
+```
+
+```
 Processing 5/5 videos from: 𝕡𝕠𝕤𝕥 𝕡𝕦𝕟𝕜. Progress: |████████████████████████████████████████| 100.00%
 {
     0: {
@@ -82,6 +93,9 @@ Few playlists example:
 > python main.py
 
 Please provide an YT public playlist URL: https://www.youtube.com/playlist?list=PL0PoKNuzUC_sWCvwmI5TXoflXJdzJeiAl, https://www.youtube.com/playlist?list=PLw3A77RRI5PD9QYqiyKr3EUHk2Ac2ET83, https://www.youtube.com/playlist?list=PL8134A817825545CC
+```
+
+```
 Processing 5/5 videos from: 𝕡𝕠𝕤𝕥 𝕡𝕦𝕟𝕜. Progress: |████████████████████████████████████████| 100.00%
 Processing 6/6 videos from: Tash Sultana - NOTION EP. Progress: |████████████████████████████████████████| 100.00%
 Processing 6/6 videos from: Alcest - Écailles De Lune Full Album. Progress: |████████████████████████████████████████| 100.00%

@@ -1,11 +1,12 @@
 import sys
+
 import colorama
 
 
 class ProgressBar:
 
     @classmethod
-    def progress_bar(cls, playlist_title: str, progress: int, total: int, length: int = 40):
+    def progress_bar(cls, playlist_title: str, progress: int, total: int, length: int = 40) -> None:
         """
         Emulate a progress bar in console.
 

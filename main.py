@@ -1,24 +1,23 @@
 import rich
-from youtube_playlist_scrapper import YoutubePlaylistScrapper
-from file_manager import FileManager
 
+from src import FileManager, Scrapper
 
 if __name__ == '__main__':
-    playlist_url: str = input(
+    prompt: str = input(
             "Please provide an YT public playlist URL: "
         )
 
-    playlist_url: list[str] = playlist_url.split(sep=',')
+    playlists: list[str] = prompt.split(sep=',')
 
-    scrapper: YoutubePlaylistScrapper = YoutubePlaylistScrapper(
-        playlist_url=playlist_url
+    scrapper: Scrapper = Scrapper(
+        playlists=playlists
     )
-    scrapper.scrap_playlist()
+    scrapper.scrap()
 
     FileManager.import_to_json(
-        data=scrapper.playlist_data
+        data=scrapper.playlist_container
     )
 
     rich.print(
-        scrapper.playlist_data
+        scrapper.playlist_container
     )
